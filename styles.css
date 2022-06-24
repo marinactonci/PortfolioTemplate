@@ -1,0 +1,276 @@
+:root {
+    --main-white: #f0f0f0;
+    --main-red: #be3144;
+    --main-blue: #45567d;
+    --main-gray: #303841;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding-right: 1.5rem;
+    overflow: hidden;
+    background-color: var(--main-red);
+}
+  
+li {
+    float: right;
+}
+  
+li a {
+    display: block;
+    color: var(--main-white);
+    text-align: center;
+    padding: 1.5rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+li a:hover:not(.active) {
+    background-color: var(--main-blue);
+}
+
+.welcome-section {
+    height: 100vh;
+    background-color: #000;
+    background-image: linear-gradient(62deg, #3a3d40, #181719);
+}
+
+.welcome-text {
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.welcome-h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--main-white)
+}
+
+.welcome-p {
+    font-size: 1.5rem;
+    font-weight: 100;
+    font-style: italic;
+    color: var(--main-red)
+}
+
+.work {
+    text-align: center;
+    background-color: var(--main-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.work-h1 {
+    text-decoration: underline;
+    text-underline-offset: 20px;
+    color: var(--main-white);
+    padding-top: 7.5%;
+    padding-bottom: 5%;
+    font-size: xxx-large;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.grid {
+    padding: 0 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+    justify-items: center;
+}
+
+.project-tile {
+    background-color: var(--main-gray);
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+    text-decoration: none;
+    text-align: center;
+}
+
+.project-tile:hover > p > .code {
+    color: orange;
+}
+
+.project-image {
+    height: calc(100% - 3rem);
+    width: 100%;
+    object-fit: cover;
+}
+
+.project-title {
+    color: var(--main-white);
+    font-size: large;
+}
+
+.code {
+    color: var(--main-gray);
+    transition: color 0.3s ease-out;
+}
+
+.button-link {
+    text-decoration: none;
+    color: var(--main-white);
+}
+
+.button {
+    margin-top: 25%;
+    margin-bottom: 50%;
+    width: 125px;
+    height: 40px;
+    background-color: var(--main-gray);
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: var(--main-red);
+}
+
+.button > p > i {
+    transition: 0.3s;
+}
+
+.button:hover > p > i{
+    transform: translateX(5px);
+}
+
+.button-icon {
+    margin-left: 5px;
+}
+
+.contact {
+    background-color: var(--main-gray);
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-text {
+    text-align: center;
+    color: var(--main-white);
+}
+
+.contact-h1 {
+    font-size: xxx-large;
+}
+
+.contact-p {
+    padding-top: 1rem;
+    font-style: italic;
+}
+
+.social {
+    margin-top: 3rem;
+    display: flex;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--main-white);
+    font-size: x-large;
+    transition: all 0.5s;
+}
+
+.social-link:hover {
+    transform: translateY(10px);
+}
+
+.social-link:not(:last-child) {
+    margin-right: 2rem;
+}
+
+.social-link > i {
+    margin-right: 5px;
+}
+
+hr {
+    height: 5px;
+    background-color: var(--main-red);
+    border: none;
+}
+
+footer {
+    background-color: var(--main-gray);
+    color: var(--main-white);
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 15%;
+}
+
+@media (max-width: 1200px){
+    footer > p:first-child {
+        padding-right: 50px;
+    }
+}
+
+@media (max-width: 900px) {
+    .social {
+        margin-left: 2.5%;
+    }
+
+    .social-link {
+        margin: 0;
+        padding: 0;
+    }
+
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 800px){
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-link:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 675px) {
+    .work-h1 {
+        text-underline-offset: 8px;
+    }
+}
